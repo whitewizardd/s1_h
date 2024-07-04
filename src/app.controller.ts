@@ -9,13 +9,14 @@ export class AppController {
   getClientIp(
     @Req() request: Request,
     @Query('visitor_name') visitor_name: string,
-  ): Promise<object> {
+  ) {
     const ipAddress =
       request.headers['x-forwarded-for'] || request.connection.remoteAddress;
-    console.log(ipAddress);
-    return this.app_service.get_ip_address_and_location_and_temperature(
-      ipAddress[0],
-      visitor_name,
-    );
+    // console.log(ipAddress);
+    // return this.app_service.get_ip_address_and_location_and_temperature(
+    //   ipAddress[0],
+    //   visitor_name,
+    // );
+    return ipAddress;
   }
 }
