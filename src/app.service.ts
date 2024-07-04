@@ -9,7 +9,7 @@ export class AppService {
   }
 
   get_ip_address_and_location_and_temperature = async (
-    ip_address: string,
+    ip_address,
     visitor_name: string
   ): Promise<object> => {
     console.log(ip_address);
