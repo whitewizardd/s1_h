@@ -12,11 +12,12 @@ export class AppService {
     ip_address: string,
     visitor_name: string
   ): Promise<object> => {
+    console.log(ip_address);
     const location = (await axios.get(ip_info_url(ip_address))).data;
     console.log(location);
     return {
-      client_ip: "",
-      location: "",
+      client_ip: '',
+      location: '',
       greeting: `Hello ${visitor_name}`,
     };
   };
