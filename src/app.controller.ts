@@ -21,6 +21,6 @@ export class AppController {
   getClientIp(@Req() request: Request): string {
     const ipAddress =
       request.headers['x-forwarded-for'] || request.connection.remoteAddress;
-    return `Client IP address: ${ipAddress}`;
+    return `Client IP address: ${ipAddress[0]}`;
   }
 }
