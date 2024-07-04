@@ -16,8 +16,8 @@ export class AppService {
     const location = (await axios.get(ip_info_url(ip_address))).data;
     console.log(location);
     return {
-      client_ip: '',
-      location: '',
+      client_ip: ip_address,
+      location: location.city,
       greeting: `Hello ${visitor_name}`,
     };
   };
